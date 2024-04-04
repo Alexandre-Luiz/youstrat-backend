@@ -12,7 +12,8 @@ import stratRouter from './routes/strategy.route.js';
 import userRouter from './routes/user.route.js';
 
 const app = express();
-const PORT = 3001;
+// Heroku will set a env port dynamically that is why the .env.PORT
+const PORT = process.env.PORT || 3001;
 
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
