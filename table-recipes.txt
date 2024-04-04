@@ -1,0 +1,75 @@
+CREATE TABLE games (
+	game_id SERIAL PRIMARY KEY,
+	game_name VARCHAR NOT NULL
+)
+
+CREATE TABLE maps (
+	map_id SERIAL PRIMARY KEY,
+	map_name VARCHAR NOT NULL,
+	game_id INT NOT NULL,
+	CONSTRAINT fk_games FOREIGN KEY (game_id) REFERENCES games (game_id)
+)
+
+CREATE TABLE cs_strategies (
+	strat_id SERIAL PRIMARY KEY,
+	type VARCHAR NOT NULL,
+	strat_name VARCHAR NOT NULL,
+	video_url VARCHAR NOT NULL,
+	description VARCHAR NOT NULL,
+	map_id INT NOT NULL,
+	CONSTRAINT fk_maps FOREIGN KEY (map_id) REFERENCES maps (map_id)
+)
+
+CREATE TABLE users (
+	user_id SERIAL PRIMARY KEY,
+	username VARCHAR NOT NULL UNIQUE,
+  password VARCHAR NOT NULL,
+	role VARCHAR(255) DEFAULT 'regular' CHECK (role IN ('admin', 'regular'))
+)
+
+
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY,
+  username VARCHAR NOT NULL UNIQUE,
+  password VARCHAR NOT NULL,
+  role VARCHAR(255) DEFAULT 'regular',
+  login_attempts INTEGER DEFAULT 0,
+  is_locked BOOLEAN DEFAULT false,
+  lockout_time TIMESTAMP
+);
+
+
+user admin na base:
+{
+	"username":"admin_1",
+	"password":"ausaogm3292384h2h21h384h231msa2u432n"	
+}
+
+
+type (execute, flash, molotov, smoke)
+
+{
+	strat_id: 1,
+	type: execute,
+	name: Execution bomb A,
+	map: Mirage,
+	video_url: https://xxxx.com
+	description: lorem ipsum
+}
+--------------------------------------------------------------
+CREATE TABLE valorant (
+	strat_id SERIAL PRIMARY KEY,
+	type VARCHAR NOT NULL,
+	name VARCHAR NOT NULL,
+	map VARCHAR NOT NULL,
+	agent VARCHAR NOT NULL,
+	video_url VARCHAR NOT NULL,
+	description VARCHAR NOT NULL
+)
+
+type ()
+
+
+UPDATE users
+SET lockout_time = NULL
+WHERE user_id = 1
