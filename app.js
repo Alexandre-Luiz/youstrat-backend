@@ -28,6 +28,17 @@ global.logger = winston.createLogger({
   format: combine(label({ label: 'YouStrat-api' }), timestamp(), myFormat),
 });
 
+app.use((req, res, next) => {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 const corsOptions = {
   // origin:  'http://localhost:3000',
   origin: 'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app/',
