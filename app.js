@@ -30,7 +30,8 @@ global.logger = winston.createLogger({
 
 const corsOptions = {
   // origin:  'http://localhost:3000',
-  origin: 'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app',
+  // origin: 'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app',
+  origin: '*',
   credentials: true, //access-control-allow-credentials:true
   // optionSuccessStatus: 200,
 };
