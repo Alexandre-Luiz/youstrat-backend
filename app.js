@@ -29,10 +29,7 @@ global.logger = winston.createLogger({
 });
 
 app.use((req, res, next) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app'
-  );
+  res.setHeader('Access-Control-Allow-Origin', 'https://youstrat-frontend2.vercel.app/');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -41,7 +38,7 @@ app.use((req, res, next) => {
 
 const corsOptions = {
   // origin:  'http://localhost:3000',
-  origin: 'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app/',
+  origin: 'https://youstrat-frontend2.vercel.app/',
   credentials: true, //access-control-allow-credentials:true
   // optionSuccessStatus: 200,
 };
