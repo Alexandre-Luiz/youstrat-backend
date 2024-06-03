@@ -38,14 +38,6 @@ CREATE TABLE users (
   lockout_time TIMESTAMP
 );
 
-
-user admin na base:
-{
-	"username":"admin_1",
-	"password":"ausaogm3292384h2h21h384h231msa2u432n"	
-}
-
-
 type (execute, flash, molotov, smoke)
 
 {

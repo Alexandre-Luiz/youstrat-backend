@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import winston from 'winston';
 import session from 'express-session';
-import { createClient } from 'redis';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -29,7 +28,7 @@ global.logger = winston.createLogger({
 });
 
 const corsOptions = {
-  // origin:  'http://localhost:3000',
+  // origin: 'http://localhost:3000',
   // origin: 'https://youstrat-frontend2-n7gjb3qyz-ale-dev.vercel.app',
   // origin: 'https://youstrat-frontend2.vercel.app',
   origin: 'https://www.youstrat.com',
