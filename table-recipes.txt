@@ -1,3 +1,5 @@
+type (execute, flash, molotov, smoke)
+
 CREATE TABLE games (
 	game_id SERIAL PRIMARY KEY,
 	game_name VARCHAR NOT NULL
@@ -27,7 +29,6 @@ CREATE TABLE users (
 	role VARCHAR(255) DEFAULT 'regular' CHECK (role IN ('admin', 'regular'))
 )
 
-
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
   username VARCHAR NOT NULL UNIQUE,
@@ -38,8 +39,6 @@ CREATE TABLE users (
   lockout_time TIMESTAMP
 );
 
-type (execute, flash, molotov, smoke)
-
 {
 	strat_id: 1,
 	type: execute,
@@ -48,7 +47,7 @@ type (execute, flash, molotov, smoke)
 	video_url: https://xxxx.com
 	description: lorem ipsum
 }
---------------------------------------------------------------
+-------------------------- NOT IMPLEMENTED ------------------------------------
 CREATE TABLE valorant (
 	strat_id SERIAL PRIMARY KEY,
 	type VARCHAR NOT NULL,
@@ -58,10 +57,3 @@ CREATE TABLE valorant (
 	video_url VARCHAR NOT NULL,
 	description VARCHAR NOT NULL
 )
-
-type ()
-
-
-UPDATE users
-SET lockout_time = NULL
-WHERE user_id = 1
