@@ -248,6 +248,11 @@ Before running the application, ensure that you have the following software inst
 1. Clone the repository
 2. Navigate to the project directory
 3. Install the dependencies: `npm install`
+4. Create .env file and add:
+ - DB_USER
+ - DB_PASS
+ - SESSION_SECRET
+ - REDIS_PASS
 
 ## Usage
 
