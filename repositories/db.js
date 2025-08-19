@@ -6,7 +6,8 @@ const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 
 const sequelize = new Sequelize(
-  `postgres://${dbUser}:${dbPass}@tuffi.db.elephantsql.com/${dbUser}`,
+  //`postgres://${dbUser}:${dbPass}@tuffi.db.elephantsql.com/${dbUser}`,
+  `postgresql://postgres:${dbPass}@db.${dbUser}.supabase.co:5432/postgres`,
   {
     dialect: 'postgres',
     logging: false,

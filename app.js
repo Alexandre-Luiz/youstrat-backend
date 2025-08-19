@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import winston from 'winston';
 import session from 'express-session';
+import { createClient } from 'redis';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
