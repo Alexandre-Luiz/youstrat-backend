@@ -150,7 +150,7 @@ async function getUserSession(req, res, next) {
 }
 
 export default {
-  signup,
+  //signup,
   login,
   getUserSession,
   signout,
