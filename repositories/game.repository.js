@@ -22,6 +22,7 @@ async function updateGame(game) {
 
 async function getGames() {
   try {
+    console.log('get games');
     return await Game.findAll();
   } catch (error) {
     throw error;
